@@ -1,24 +1,49 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Header from './components/header';
+import Footer from './components/footer';
+import Numbers from './components/numbers'
 
+
+function OurText(){
+  return <p>This is our test message</p>
+}
+function createalert()
+{
+  alert("whaaaaaaaat")
+}
+
+function ShowMessage(props) {
+  if(props.toshow)
+  {
+      return <h1>proceed</h1>
+  
+  }
+
+  else
+  {
+      return <h1>FORBIDDEN</h1>
+
+  }
+  
+}
 function App() {
   return (
     <div className="App">
+      
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <Numbers></Numbers>
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          HELLO FROM REACT,HIII
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <OurText />
+        <Header info="This is my message" myalert={createalert}/>
+        <Header info="woaaaahhhhh"/>
+        <Footer trademark="by chahat"/>
+        <ShowMessage toshow ={false} />
       </header>
+      
     </div>
   );
 }
